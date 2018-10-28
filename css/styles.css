@@ -3,7 +3,7 @@
 }
 
 h1 {
-  background-color: aqua;
+  background-color: #a7bfe5;
   padding: 50px;
   text-align: center;
 }
@@ -15,7 +15,7 @@ body {
 .col-md-4 {
   width: 33%;
   float: left;
-  background-color: #91c494;
+  background-color: #c6a1e0;
   margin: 2px;
   padding: 6px;
   max-width: 500px;
