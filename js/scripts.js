@@ -1,5 +1,5 @@
 //Biz logic copied from ping pong assignment
-function pongMachine(numberAbs) {
+function CocktailMaker(liquor, mixer, garnishes) {
   var numberArray = []
   for (var index = 1; index <= numberAbs; index += 1) {
 
@@ -16,16 +16,15 @@ function pongMachine(numberAbs) {
   return numberArray;
 };
 
-//UI logic copied from pingpong assignment
+//UI logic
 $(document).ready(function() {
-  $("form#ping-pong").submit(function(event) {
+  $("form#cocktail").submit(function(event) {
     event.preventDefault();
-    var number = parseInt($("input#number").val());
-    var numberAbs = Math.abs(number);
-    var numberArray = pongMachine(numberAbs);
-    numberArray.forEach(function(x) {
-      $('#resultList').append("<li>" + x + "</li>");
+    $("#result").show();
+    $("#cost").show();
+    $("input:checkbox[name=garnish]:checked").each(function() {
+      var garnishChoice = $(this).val();
+      $('#result').append(garnishChoice + "<br>");
     });
-    $("#result").show(numberArray);
   });
 });

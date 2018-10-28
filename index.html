@@ -22,24 +22,51 @@
         <div class="row">
           <div class="col-md-8">
             <h2>Mix It Up</h2>
-            <form id="ping-pong">
+            <form id="cocktail">
               <div class="form-group">
-                <p>Check out our virtual cocktail party! Mix and match liquors and mixers to create fun new drinks:</p>
+                <p>Order and pay for your drink in advance. Mix and match liquors, mixers, and garnishes to create your perfect drink:</p>
                 <ol>
-                  <li>Liquors: Moonshine, Whiskey, Gin, Vodka</li>
-                  <li>Mixers: Soda, Bitters, Simple Syrup</li>
-                  <li>Garnishes: Orange slice, cinnamon, mint</li>
+                  <li>Liquors: Moonshine, Whiskey, Gin, Tequila</li>
+                  <li>Mixers: Soda Water, Ginger Beer, Cola, Tonic Water</li>
+                  <li>Garnishes/Extras: Bitters, Lime slice, Cinnamon, Mint, Simple Syrup</li>
                 </ol>
-                <p><label for="number">Enter something here:</label></p>
-                <input id="number" type="text">
+                <p>Choose your mixin's here:</p>
               </div>
-              <button type="submit" class="btn-info">Bartender, do your work!</button>
+              <h3>Liquor choice:</h3>
+              <select class="form-control" id="liquor">
+                <option value="1">$10.00 ---- Moonshine</option>
+                <option value="2">$9.00 ---- Whiskey</option>
+                <option value="3">$8.00 ---- Gin</option>
+                <option value="4">$9.50 ---- Tequila</option>
+              </select>
+
+              <h3>Mixer choice:</h3>
+              <select class="form-control" id="mixer">
+                <option value="1">Soda Water</option>
+                <option value="2">Ginger Beer</option>
+                <option value="3">Cola</option>
+                <option value="4">Tonic Water</option>
+              </select>
+
+              <h3>Garnishes and Extras:</h3>
+              <form id="garnishes">
+              <div class="form-group">
+                <p>Add a garnish/extra (or several!) for $3.00 extra per option:</p>
+                <input type="checkbox" name="garnish" value="Bitters">Bitters<br>
+                <input type="checkbox" name="garnish" value="Lime Slices">Lime Slices<br>
+                <input type="checkbox" name="garnish" value="Cinnamon Sticks">Cinnamon Sticks<br>
+                <input type="checkbox" name="garnish" value="Mint Sprigs">Mint Sprigs<br>
+                <input type="checkbox" name="garnish" value="Simple Syrup">Simple Syrup<br>
+              </div>
+              <button type="submit" class="btn-info">Add to Cart</button>
             </form>
             <div id="result">
-              Results:
+              <h2>Your drink will include the following ingredients:</h2>
             <ul id="resultList">
             </ul>
 
+              <div id="cost">
+              </div>
             </div>
           </div>
         </div>
