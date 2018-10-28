@@ -1,0 +1,26 @@
+#result {
+  display: none;
+}
+
+h1 {
+  background-color: aqua;
+  padding: 50px;
+  text-align: center;
+}
+
+body {
+  background-color: #CCCCCC;
+}
+
+.col-md-4 {
+  width: 33%;
+  float: left;
+  background-color: #91c494;
+  margin: 2px;
+  padding: 6px;
+  max-width: 500px;
+}
+
+.row-eq-height {
+  height: 100%;
+}
