@@ -1,9 +1,8 @@
 //Biz logic
-function Cocktail(liquor, submitteduserGarnishes) {
-  this.liquor = liquor;
+function Cocktail(submittedliquor, submitteduserGarnishes) {
+  this.liquor = submittedliquor;
   this.garnishes = submitteduserGarnishes;
   this.price = 0.00;
-};
 
 Cocktail.prototype.drinkCost = function() {
       if (this.liquor === "Moonshine") {
@@ -29,12 +28,12 @@ Cocktail.prototype.drinkCost = function() {
 
     return newCocktail.price;
   };
+};
 
 //UI logic
 $(document).ready(function() {
   $("form#cocktail").submit(function(event) {
     event.preventDefault();
-    debugger;
     var submittedLiquor = $("#liquor").val();
     var mixer = $("#mixer").val();
     //  var submitteduserGarnishes captures the values of each garnish or extra chosen by the user, to be displayed to them in the future.
@@ -43,17 +42,11 @@ $(document).ready(function() {
       var garnishChoice = $(this).val();
       submitteduserGarnishes.push(garnishChoice);
 
-    // this calls on the back end logic
-    var newCocktail = "";
-    newCocktail = new Cocktail(submittedLiquor, submitteduserGarnishes);
-    var orderedCocktail = [];
-    //Cocktail.drinkCost(submittedLiquor);
+    // this is supposed to call on the back end logic, but doesn't work and I can't figure out why
+    var newCocktail = new Cocktail(submittedLiquor, submitteduserGarnishes);
 
-    console.log("This is the drink order: " + submittedLiquor + ", " + mixer + ", " + submitteduserGarnishes)
-
-    //newCocktail1.liquor = newCocktail1.drinkCost;
-    //console.log ("price: " + newCocktail1.price)
     $("#result").show();
+    $("#result").text("This is the drink order: " + submittedLiquor + ", " + mixer + ", " + submitteduserGarnishes);
     });
   });
 });
