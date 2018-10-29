@@ -1,9 +1,12 @@
 //Biz logic
+
+//object
 function Cocktail(submittedliquor, submitteduserGarnishes) {
   this.liquor = submittedliquor;
   this.garnishes = submitteduserGarnishes;
   this.price = 0.00;
 
+// prototype! with method 'drinkCost'
 Cocktail.prototype.drinkCost = function() {
       if (this.liquor === "Moonshine") {
         newCocktail.price += 10.00;
@@ -17,10 +20,10 @@ Cocktail.prototype.drinkCost = function() {
       }
       if (this.garnishes === "Bitters" || "Lime Slices" || "Cinnamon Sticks" || "Mint Sprigs" || "Simple Syrup") {
         newCocktail.price += 3.00;
-      // }
-      // if (this.userGarnishes.length > 0) {
-      //     this.price += (this.userGarnishes.length) * 3.00;
-      //     console.log("This is the price so far after toppings: " + this.price)
+      // the logic for garnishes (above) should be more complicated, but I was just trying to get SOMETHING to work... here's a draft of the more complicated version:
+      // if (this.submitteduserGarnishes.length > 0) {
+      //     this.price += (this.submitteduserGarnishes.length) * 3.00;
+      //     console.log("This is the price after garnishes: " + this.price)
       } else {
         alert("You messed up the webpage!");
       }
@@ -42,7 +45,7 @@ $(document).ready(function() {
       var garnishChoice = $(this).val();
       submitteduserGarnishes.push(garnishChoice);
 
-    // this is supposed to call on the back end logic, but doesn't work and I can't figure out why
+    // constructor!
     var newCocktail = new Cocktail(submittedLiquor, submitteduserGarnishes);
 
     $("#result").show();
