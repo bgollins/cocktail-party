@@ -9,27 +9,24 @@ function Cocktail(submittedliquor, submitteduserGarnishes) {
 // prototype! with method 'drinkCost'
 Cocktail.prototype.drinkCost = function() {
       if (this.liquor === "Moonshine") {
-        newCocktail.price += 10.00;
+        this.price += 10.00;
         console.log("part 2 of biz logic is working!")
       }
       if (this.liquor === "Whiskey") {
-        newCocktail.price += 9.00;
+        this.price += 9.00;
       }
       if (this.liquor === "Gin") {
-        newCocktail.price += 8.00;
+        this.price += 8.00;
       }
-      if (this.garnishes === "Bitters" || "Lime Slices" || "Cinnamon Sticks" || "Mint Sprigs" || "Simple Syrup") {
-        newCocktail.price += 3.00;
-      // the logic for garnishes (above) should be more complicated, but I was just trying to get SOMETHING to work... here's a draft of the more complicated version:
-      // if (this.submitteduserGarnishes.length > 0) {
-      //     this.price += (this.submitteduserGarnishes.length) * 3.00;
-      //     console.log("This is the price after garnishes: " + this.price)
+      if (this.garnishes.length > 0) {
+          this.price += (this.garnishes.length) * 3.00;
+          console.log("This is the price after garnishes: " + this.price)
       } else {
         alert("You messed up the webpage!");
       }
-      console.log("total price is: " + newCocktail.price)
+      console.log("total price is: " + this.price)
 
-    return newCocktail.price;
+    return this.price;
   };
 };
 
@@ -47,9 +44,10 @@ $(document).ready(function() {
 
     // constructor!
     var newCocktail = new Cocktail(submittedLiquor, submitteduserGarnishes);
+    newCocktail.drinkCost();
 
     $("#result").show();
-    $("#result").text("This is the drink order: " + submittedLiquor + ", " + mixer + ", " + submitteduserGarnishes);
+    $("#result").text("This is the drink order: " + submittedLiquor + ", " + mixer + ", " + submitteduserGarnishes + ", and the price: $" + newCocktail.price);
     });
   });
 });
